@@ -1,0 +1,23 @@
+{
+  "name": "parcial1web",
+  "version": "1.0.0",
+  "description": "Nicolas Cardenas 201820831",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicolas-Cardenas/Parcial1Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicolas-Cardenas/Parcial1Web/issues"
+  },
+  "homepage": "https://github.com/Nicolas-Cardenas/Parcial1Web#readme",
+  "dependencies": {
+    "eslint": "^7.32.0"
+  }
+}
