@@ -1,0 +1,77 @@
+header {
+  width: 100%;
+  height: 80px;
+  left: 0px;
+  top: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#pFooter {
+  text-align: center;
+  height: fit-content;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+#headerTitulo {
+  font-family: Satisfy;
+}
+
+#carrito {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 1400px;
+  top: 20px;
+  background-image: url("./assets/carrito.png");
+}
+
+#imagenCentral {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 55%;
+}
+
+#tablaMenu {
+  text-align: center;
+  align-items: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.card-body {
+  font: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: x-large;
+  text-align: center;
+}
+
+p {
+  font: normal;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: small;
+  text-align: justify;
+}
+
+#rowCards {
+  padding: 10px;
+}
+
+#numeroProductos {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  left: 1450px;
+  top: 20px;
+}
+
+#tituloCarrito {
+  font: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: x-large;
+  text-align: center;
+}
+
