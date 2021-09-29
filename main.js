@@ -1,6 +1,5 @@
 let dataTotal = [];
 let dataCarrito = [];
-let contadorBurger = 0;
 let contadorProductos = 0;
 
 function fetchJson() {
@@ -65,162 +64,78 @@ function menu() {
 
 // eslint-disable-next-line no-unused-vars
 function cardsBurgers() {
-  main1 = document.getElementsByTagName("main")[1];
-  main1.innerHTML = "";
   main = document.getElementsByTagName("main")[0];
-  main2 = document.getElementsByTagName("main")[2];
-  main2.innerHTML = "";
-  main3 = document.getElementsByTagName("main")[3];
-  main3.innerHTML = "";
-  main4 = document.getElementsByTagName("main")[4];
-  main4.innerHTML = "";
+  main.innerHTML = "";
+  imagenCentral();
+  menu();
 
-  if (contadorBurger === 0) {
-    //Titulo
-    divTitulo = document.createElement("div");
-    divTitulo.setAttribute("class", "card");
-    divBodyTitulo = document.createElement("div");
-    divBodyTitulo.setAttribute("class", "card-body");
-    divBodyTitulo.innerHTML = "Burgers";
-    divTitulo.appendChild(divBodyTitulo);
+  divTitulo = document.createElement("div");
+  divTitulo.setAttribute("class", "card");
+  divBodyTitulo = document.createElement("div");
+  divBodyTitulo.setAttribute("class", "card-body");
+  divBodyTitulo.innerHTML = "Burgers";
+  divTitulo.appendChild(divBodyTitulo);
 
-    //InfoBurgers
-    row = document.createElement("div");
-    row.setAttribute("class", "row");
-    row.setAttribute("id", "rowCards");
+  //InfoBurgers
+  row = document.createElement("div");
+  row.setAttribute("class", "row");
+  row.setAttribute("id", "rowCards");
 
-    for (let index = 0; index < dataTotal.length; index++) {
-      col = document.createElement("div");
-      col.setAttribute("class", "col");
+  for (let index = 0; index < dataTotal.length; index++) {
+    col = document.createElement("div");
+    col.setAttribute("class", "col");
 
-      div = document.createElement("div");
-      div.setAttribute("class", "card");
-      div.setAttribute("style", "width: 18rem;");
+    div = document.createElement("div");
+    div.setAttribute("class", "card");
+    div.setAttribute("style", "width: 18rem;");
 
-      img = document.createElement("img");
-      img.setAttribute("class", "card-img-top");
-      img.setAttribute("src", dataTotal[0].products[index].image);
+    img = document.createElement("img");
+    img.setAttribute("class", "card-img-top");
+    img.setAttribute("src", dataTotal[0].products[index].image);
 
-      divCardBody = document.createElement("div");
-      divCardBody.setAttribute("class", "card-body");
+    divCardBody = document.createElement("div");
+    divCardBody.setAttribute("class", "card-body");
 
-      n = document.createElement("h5");
-      n.innerText = dataTotal[0].products[index].name;
+    n = document.createElement("h5");
+    n.innerText = dataTotal[0].products[index].name;
 
-      p = document.createElement("p");
-      p.innerText = dataTotal[0].products[index].description;
+    p = document.createElement("p");
+    p.innerText = dataTotal[0].products[index].description;
 
-      price = document.createElement("h5");
-      price.innerText = "$" + dataTotal[0].products[index].price;
+    price = document.createElement("h5");
+    price.innerText = "$" + dataTotal[0].products[index].price;
 
-      btn = document.createElement("button");
-      btn.setAttribute("type", "button");
-      btn.setAttribute("class", "btn btn-dark");
-      btn.innerHTML = "Add to cart";
-      // eslint-disable-next-line no-loop-func
-      btn.addEventListener("click", function () {
-        numeroProductos();
-        agregarACarrito(
-          dataTotal[0].products[index].description,
-          dataTotal[0].products[index].price
-        );
-      });
+    btn = document.createElement("button");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("class", "btn btn-dark");
+    btn.innerHTML = "Add to cart";
+    // eslint-disable-next-line no-loop-func
+    btn.addEventListener("click", function () {
+      numeroProductos();
+      agregarACarrito(
+        dataTotal[0].products[index].description,
+        dataTotal[0].products[index].price
+      );
+    });
 
-      divCardBody.appendChild(n);
-      divCardBody.appendChild(p);
-      divCardBody.appendChild(price);
-      divCardBody.appendChild(btn);
-      div.appendChild(img);
-      div.appendChild(divCardBody);
-      col.appendChild(div);
-      row.appendChild(col);
-      contadorBurger++;
-    }
-
-    main.appendChild(divTitulo);
-    main.appendChild(row);
-  } else {
-    main.innerHTML = "";
-    imagenCentral();
-    menu();
-    //Titulo
-    divTitulo = document.createElement("div");
-    divTitulo.setAttribute("class", "card");
-    divBodyTitulo = document.createElement("div");
-    divBodyTitulo.setAttribute("class", "card-body");
-    divBodyTitulo.innerHTML = "Burgers";
-    divTitulo.appendChild(divBodyTitulo);
-
-    //InfoBurgers
-    row = document.createElement("div");
-    row.setAttribute("class", "row");
-    row.setAttribute("id", "rowCards");
-
-    for (let index = 0; index < dataTotal.length; index++) {
-      col = document.createElement("div");
-      col.setAttribute("class", "col");
-
-      div = document.createElement("div");
-      div.setAttribute("class", "card");
-      div.setAttribute("style", "width: 18rem;");
-
-      img = document.createElement("img");
-      img.setAttribute("class", "card-img-top");
-      img.setAttribute("src", dataTotal[0].products[index].image);
-
-      divCardBody = document.createElement("div");
-      divCardBody.setAttribute("class", "card-body");
-
-      n = document.createElement("h5");
-      n.innerText = dataTotal[0].products[index].name;
-
-      p = document.createElement("p");
-      p.innerText = dataTotal[0].products[index].description;
-
-      price = document.createElement("h5");
-      price.innerText = "$" + dataTotal[0].products[index].price;
-
-      btn = document.createElement("button");
-      btn.setAttribute("type", "button");
-      btn.setAttribute("class", "btn btn-dark");
-      btn.innerHTML = "Add to cart";
-      // eslint-disable-next-line no-loop-func
-      btn.addEventListener("click", function () {
-        numeroProductos();
-        agregarACarrito(
-          dataTotal[0].products[index].description,
-          dataTotal[0].products[index].price
-        );
-      });
-
-      divCardBody.appendChild(n);
-      divCardBody.appendChild(p);
-      divCardBody.appendChild(price);
-      divCardBody.appendChild(btn);
-      div.appendChild(img);
-      div.appendChild(divCardBody);
-      col.appendChild(div);
-      row.appendChild(col);
-      contadorBurger++;
-    }
-
-    main.appendChild(divTitulo);
-    main.appendChild(row);
+    divCardBody.appendChild(n);
+    divCardBody.appendChild(p);
+    divCardBody.appendChild(price);
+    divCardBody.appendChild(btn);
+    div.appendChild(img);
+    div.appendChild(divCardBody);
+    col.appendChild(div);
+    row.appendChild(col);
   }
+
+  main.appendChild(divTitulo);
+  main.appendChild(row);
 }
 
 // eslint-disable-next-line no-unused-vars
 function cardsTacos() {
   main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
-  main1 = document.getElementsByTagName("main")[1];
-  main1.innerHTML = "";
-  main2 = document.getElementsByTagName("main")[2];
-  main2.innerHTML = "";
-  main3 = document.getElementsByTagName("main")[3];
-  main3.innerHTML = "";
-  main4 = document.getElementsByTagName("main")[4];
-  main4.innerHTML = "";
   imagenCentral();
   menu();
 
@@ -284,22 +199,14 @@ function cardsTacos() {
     row.appendChild(col);
   }
 
-  main1.appendChild(divTitulo);
-  main1.appendChild(row);
+  main.appendChild(divTitulo);
+  main.appendChild(row);
 }
 
 // eslint-disable-next-line no-unused-vars
 function cardsSalads() {
   main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
-  main1 = document.getElementsByTagName("main")[1];
-  main1.innerHTML = "";
-  main2 = document.getElementsByTagName("main")[2];
-  main2.innerHTML = "";
-  main3 = document.getElementsByTagName("main")[3];
-  main3.innerHTML = "";
-  main4 = document.getElementsByTagName("main")[4];
-  main4.innerHTML = "";
   imagenCentral();
   menu();
 
@@ -363,22 +270,14 @@ function cardsSalads() {
     row.appendChild(col);
   }
 
-  main2.appendChild(divTitulo);
-  main2.appendChild(row);
+  main.appendChild(divTitulo);
+  main.appendChild(row);
 }
 
 // eslint-disable-next-line no-unused-vars
 function cardsDesserts() {
   main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
-  main1 = document.getElementsByTagName("main")[1];
-  main1.innerHTML = "";
-  main2 = document.getElementsByTagName("main")[2];
-  main2.innerHTML = "";
-  main3 = document.getElementsByTagName("main")[3];
-  main3.innerHTML = "";
-  main4 = document.getElementsByTagName("main")[4];
-  main4.innerHTML = "";
   imagenCentral();
   menu();
 
@@ -442,22 +341,14 @@ function cardsDesserts() {
     row.appendChild(col);
   }
 
-  main3.appendChild(divTitulo);
-  main3.appendChild(row);
+  main.appendChild(divTitulo);
+  main.appendChild(row);
 }
 
 // eslint-disable-next-line no-unused-vars
 function cardsDrinks() {
   main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
-  main1 = document.getElementsByTagName("main")[1];
-  main1.innerHTML = "";
-  main2 = document.getElementsByTagName("main")[2];
-  main2.innerHTML = "";
-  main3 = document.getElementsByTagName("main")[3];
-  main3.innerHTML = "";
-  main4 = document.getElementsByTagName("main")[4];
-  main4.innerHTML = "";
   imagenCentral();
   menu();
 
@@ -521,8 +412,8 @@ function cardsDrinks() {
     row.appendChild(col);
   }
 
-  main4.appendChild(divTitulo);
-  main4.appendChild(row);
+  main.appendChild(divTitulo);
+  main.appendChild(row);
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -567,14 +458,6 @@ function agregarACarrito(dataDescription, dataPrice) {
 function carrito() {
   main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
-  main1 = document.getElementsByTagName("main")[1];
-  main1.innerHTML = "";
-  main2 = document.getElementsByTagName("main")[2];
-  main2.innerHTML = "";
-  main3 = document.getElementsByTagName("main")[3];
-  main3.innerHTML = "";
-  main4 = document.getElementsByTagName("main")[4];
-  main4.innerHTML = "";
   imagenCentral();
   menu();
 
@@ -697,10 +580,17 @@ function carrito() {
   bt1.setAttribute("type", "button");
   bt1.setAttribute("class", "btn btn-danger");
   bt1.innerHTML = "Cancel";
+  bt1.setAttribute("data-toggle", "modal");
+  bt1.setAttribute("data-target", "#exampleModal");
+
   let bt2 = document.createElement("button");
   bt2.setAttribute("type", "button");
   bt2.setAttribute("class", "btn btn-success");
   bt2.innerHTML = "Confirm Order";
+  bt2.addEventListener("click", function () {
+    confirmOrder();
+  });
+
   col3.appendChild(bt1);
   col3.appendChild(bt2);
 
@@ -744,6 +634,20 @@ function modifyQuitar(pDescripcion) {
 // eslint-disable-next-line no-unused-vars
 function volverInicio() {
   basico();
+}
+
+// eslint-disable-next-line no-unused-vars
+function cancelOrder() {
+  contadorProductos = 0;
+  textoModificar = document.getElementById("numeroProductos");
+  textoModificar.innerHTML = contadorProductos + " items";
+  dataCarrito.length = 0;
+  basico();
+}
+
+function confirmOrder() {
+  // eslint-disable-next-line no-console
+  console.log(dataCarrito);
 }
 
 fetchJson();

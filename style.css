@@ -35,12 +35,6 @@ body {
   height: 55%;
 }
 
-#tablaMenu {
-  text-align: center;
-  align-items: center;
-  padding-top: 20%;
-  padding-bottom: 20%;
-}
 
 .card-body {
   font: bold;
